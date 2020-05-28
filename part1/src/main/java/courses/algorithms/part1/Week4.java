@@ -1,3 +1,5 @@
+package courses.algorithms.part1;
+
 import com.sun.tools.javac.util.Pair;
 
 import java.io.IOException;

@@ -1,3 +1,5 @@
+package courses.algorithms.part1;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
