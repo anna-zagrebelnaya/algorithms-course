@@ -14,11 +14,20 @@ public class Week4 {
 
     private static Random RANDOM = new Random();
 
+    public static class SimpleExample {
+        public static final void main(String[] args) throws IOException, URISyntaxException {
+            Map<Integer, List<Integer>> graph = readGraph("week4/SmallGraph.txt");
+            runAlgorithm(graph);
+        }
+    }
+
     public static final void main(String[] args) throws IOException, URISyntaxException {
         Map<Integer, List<Integer>> graph = readGraph("week4/BigGraph.txt");
+        runAlgorithm(graph);
+    }
 
+    private static void runAlgorithm(Map<Integer, List<Integer>> graph) {
         int n = graph.size();
-        //int N = (int) (n * n * Math.log(n));
         int N = n * n;
         int minCut = n;
         for (int i = 0; i < N; i++) {

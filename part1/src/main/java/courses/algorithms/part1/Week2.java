@@ -14,8 +14,19 @@ import java.util.stream.Collectors;
 
 public class Week2 {
 
+    public static class SimpleExample {
+        public static final void main(String[] args) throws IOException, URISyntaxException {
+            List<Integer> integerList = readIntegers("week2/SmallIntegerArray.txt");
+            runAlgorithm(integerList);
+        }
+    }
+
     public static final void main(String[] args) throws IOException, URISyntaxException {
         List<Integer> integerList = readIntegers("week2/BigIntegerArray.txt");
+        runAlgorithm(integerList);
+    }
+
+    private static void runAlgorithm(List<Integer> integerList) {
         BigInteger inversionsCount = countInversions(integerList).fst;
         System.out.println("inversions count: " + inversionsCount);
     }

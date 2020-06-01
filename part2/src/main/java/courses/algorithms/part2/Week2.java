@@ -15,25 +15,24 @@ import static java.util.Arrays.asList;
 public class Week2 {
 
     private static final int SOURCE_NODE = 1;
-    private static final List<Integer> VERTICES_INCLUDED_IN_SMALL_RESULT = asList(1,3);
+    private static final List<Integer> VERTICES_INCLUDED_IN_RESULT_SMALL = asList(1,3);
     private static final List<Integer> VERTICES_INCLUDED_IN_RESULT = asList(7,37,59,82,99,115,133,165,188,197);
 
     public static class SmallExample {
         public static void main(String[] args) throws IOException, URISyntaxException {
             Map<Integer, Map<Integer, Integer>> graph = readUndirectedWeightedGraph("week2/SmallUndirectedWeightedGraph.txt");
-            Map<Integer,Integer> shortestPaths = dijkstra(SOURCE_NODE, graph);
-            List<Integer> result = VERTICES_INCLUDED_IN_SMALL_RESULT.stream()
-                    .map(shortestPaths::get)
-                    .collect(Collectors.toList());
-            System.out.println(shortestPaths);
-            System.out.println(result);
+            runAlgorithm(graph, VERTICES_INCLUDED_IN_RESULT_SMALL);
         }
     }
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         Map<Integer, Map<Integer, Integer>> graph = readUndirectedWeightedGraph("week2/BigUndirectedWeightedGraph.txt");
+        runAlgorithm(graph, VERTICES_INCLUDED_IN_RESULT);
+    }
+
+    public static void runAlgorithm(Map<Integer, Map<Integer, Integer>> graph, List<Integer> verticesIncludedInResult) {
         Map<Integer,Integer> shortestPaths = dijkstra(SOURCE_NODE, graph);
-        List<Integer> result = VERTICES_INCLUDED_IN_RESULT.stream()
+        List<Integer> result = verticesIncludedInResult.stream()
                 .map(shortestPaths::get)
                 .collect(Collectors.toList());
         System.out.println(result);

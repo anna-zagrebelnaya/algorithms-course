@@ -13,6 +13,13 @@ import java.util.stream.IntStream;
 
 public class Week1 {
 
+    public static class SimpleExample {
+        public static final void main(String[] args) throws IOException, URISyntaxException {
+            List<Pair<Integer, Integer>> directedGraph = readDirectedGraph("week1/SmallDirectedGraph.txt");
+            runAlgorithm(directedGraph);
+        }
+    }
+
     /*
     * To be able to run this algorithm on a big graph, need to increase stack size (-Xss10m)
 
@@ -47,6 +54,10 @@ public class Week1 {
         System.out.println("reading input graph...");
         List<Pair<Integer, Integer>> directedGraph = readDirectedGraph("week1/BigDirectedGraph.txt");
         System.out.println("reading took: " + (System.currentTimeMillis() - start) + "ms");
+        runAlgorithm(directedGraph);
+    }
+
+    private static void runAlgorithm(List<Pair<Integer, Integer>> directedGraph) {
         List<Integer> cscSizes = dfsLoop(directedGraph);
         System.out.println("top 5 csc sizes:");
         System.out.println(cscSizes);

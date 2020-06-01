@@ -12,12 +12,23 @@ import java.util.stream.Collectors;
 
 public class Week3 {
 
+    public static class SimpleExample {
+        public static final void main(String[] args) throws IOException, URISyntaxException {
+            List<Integer> integerList = readIntegers("week3/SmallIntegerArray.txt");
+            runAlgorithm(integerList);
+        }
+    }
+
     //                      initial     reverse     with swaps  with final swap     fixed getting item by index
     //pivot first:          157946      158774      163145      162085              162085
     //pivot last:           162330      162776      181160      175556              164123
     //pivot median three:   145788      131305      158253      150055              138382
     public static final void main(String[] args) throws IOException, URISyntaxException {
         List<Integer> integerList = readIntegers("week3/BigIntegerArray.txt");
+        runAlgorithm(integerList);
+    }
+
+    private static void runAlgorithm(List<Integer> integerList) {
         Integer comparisonsCountPivotFirst = countComparisons(integerList, Week3::definePivotIndex_first);
         Integer comparisonsCountPivotLast = countComparisons(integerList, Week3::definePivotIndex_last);
         Integer comparisonsCountPivotMedianThree = countComparisons(integerList, Week3::definePivotIndex_medianThree);
