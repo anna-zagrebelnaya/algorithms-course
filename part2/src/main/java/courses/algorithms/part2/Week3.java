@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
+//TODO: OPTIONAL EXERCISE: Compare the performance achieved by heap-based and search-tree-based implementations of the algorithm.
 public class Week3 {
 
     private static final int SUM_MODULO = 10000;

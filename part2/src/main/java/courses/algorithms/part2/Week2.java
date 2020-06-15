@@ -12,6 +12,9 @@ import java.util.stream.Collectors;
 
 import static java.util.Arrays.asList;
 
+//TODO: OPTIONAL: For those of you seeking an additional challenge, try implementing the heap-based version.
+//  Note this requires a heap that supports deletions, and you'll probably need to maintain some kind of
+//  mapping between vertices and their positions in the heap.
 public class Week2 {
 
     private static final int SOURCE_NODE = 1;

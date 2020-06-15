@@ -9,6 +9,12 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
+//TODO: take into attention that for each number i there are boundaries for possible pair: [lowerBound-i; upperBound-i]
+// given that, try to fasten the non-parallel version of algorithm
+
+//TODO: OPTIONAL CHALLENGE: If this problem is too easy for you, try implementing your own hash table for it.
+//  For example, you could compare performance under the chaining and open addressing approaches to resolving
+//  collisions.
 public class Week4 {
 
     private static final int TARGET_LOWER_BOUND = -10000;
